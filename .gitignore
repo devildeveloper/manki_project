@@ -6,4 +6,5 @@ bin/
 *.sqlite3
 Procfile
 static/
+!*/static/
 */migrations/*
