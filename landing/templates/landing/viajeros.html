@@ -296,6 +296,87 @@
 				    	$('#uncheck').fadeIn('slow');
 				    }
 				});
+				
+					if (is_mobile()) {
+						$('#checkbox').click(function() {
+        			$('#checkbox').attr('checked');
+        		})
+        		
+			    	$('#subscribe').click(function() {
+			    	var name = $('#name').val().trim();
+        			var email = $('#email').val().trim();
+        			var phone = $('#phone').val().trim();
+        			var expName = $('#expName').val().trim();
+        			var expDesc = $('#expDesc').val().trim();
+        			var expMotive = $('#expMotive').val().trim();
+
+				    if (name == '') {
+				        $("#emptyName").fadeIn('slow');
+				    } else {
+				        $("#emptyName").fadeOut();
+				    }
+
+				    if (expName == '') {
+				        $("#emptyExpName").fadeIn('slow');
+				    } else {
+				        $("#emptyExpName").fadeOut();
+				    }
+
+				    if (expDesc == '') {
+				        $("#emptyExpDesc").fadeIn('slow');
+				    } else {
+				        $("#emptyExpDesc").fadeOut();
+				    }
+
+				    if (expMotive == '') {
+				        $("#emptyExpMotive").fadeIn('slow');
+				    } else {
+				        $("#emptyExpMotive").fadeOut();
+				    }
+
+				    if (!letter.test(name) && name != '') {
+				        $("#validateName").fadeIn('slow');
+				    } else {
+				        $("#validateName").fadeOut();
+				    }
+
+				    if (email == '') {
+				    	$("#emptyEmail").fadeIn('slow');
+				    } else {
+				        $("#emptyEmail").fadeOut();
+				    }
+
+				    if (!expr.test(email) && email != '') {
+				    	$('#validateEmail').fadeIn('slow');
+				    } else {
+				    	$('#validateEmail').fadeOut();
+				    }
+
+				    if (phone == '') {
+				    	$("#emptyPhone").fadeIn('slow');
+				    } else {
+				        $("#emptyPhone").fadeOut();
+				    }
+
+				    if (phone.length < 7 && phone != '') {
+				    	$("#errorPhone").fadeIn('slow');
+				    } else {
+				        $("#errorPhone").fadeOut();
+				    }
+
+				    if (!number.test(phone) && phone != '') {
+				    	$('#validatePhone').fadeIn('slow');
+				    } else {
+				    	$('#validatePhone').fadeOut();
+				    }
+
+			        if($("#checkbox").is(':checked')) {  
+			        	$('#uncheck').fadeOut();
+				    } else {
+				    	$('#uncheck').fadeIn('slow');
+				    }
+				});
+					}
 			});
 		});
 	</script>    
@@ -388,6 +469,18 @@
 			});
 		})(jQuery);
 	</script>
+	
+		<script>
+			function is_mobile() {
+	        return navigator.userAgent.match(/(iPhone|iPod|iPad|Android|BlackBerry|BB10|Windows Phone|Tizen|Bada)/);
+	    }
+	    
+	    if (is_mobile()) {
+	    	if ($(window).width() > 767) {
+	    		
+	    	}
+	    }
+		</script>
 
 	</body>
 </html>

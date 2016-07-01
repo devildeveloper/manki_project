@@ -351,6 +351,7 @@ p {
 
 .text-subscribe {
 	margin: 0px auto 40px;
+	font-size: 16px;
 }
 
 .text-white {
@@ -525,7 +526,6 @@ p {
 
 .width-button {
 	width: 54%;
-	margin-top: -30px !important;
 }
 
 /* Form */
@@ -537,8 +537,12 @@ p {
 	border: none;
 	color: #fff;
 	outline: none;
-	margin-top: 10px;
+	margin-top: 0px;
 	padding: 8px 40px;
+}
+
+textarea {
+	height: 32px !important;
 }
 
 .input {
@@ -561,7 +565,7 @@ p {
 .input--checkbox {
 	font-size: 14px;
 	height: 20px;
-	margin: 20px auto 30px;
+	margin: 0px auto 30px;
 	display: table;
 	padding: 0px 24px;
 	width: auto !important;
@@ -957,10 +961,6 @@ p {
 
 	.main-subtitle {
 		margin-bottom: 56px;
-	}
-
-	.text-responsive {
-		font-size: 18px;
 	}
 
 	.guias .main-title {

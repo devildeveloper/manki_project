@@ -203,7 +203,7 @@
 											</p>
 										</div>
 										<div class="col-sm-12 col-md-6 text-center">
-											<div class="input input--guias padding-sm--none">
+											<div class="input--guias padding-sm--none">
 												<div class="clearbox"></div>
 												<i class="icon user"></i>
 												<input id="expMotive" type="text" name="motive" required placeholder="Me gusta hacer nuevos amigos, me interesa aprender de nuevas culturas..." class="form-control form-control--guias">
@@ -211,12 +211,12 @@
 											</div>
 										</div>
 									</div>
-									<div class="row row--margin">
+									<div class="row row--margin margin-t-0 margin-b-0">
 										<div class="col-sm-12 col-md-6 text-center padding-left-none--md">
-											<p class="text-lg margin-b-0 text-left visible-lg">Por último, déjanos un correo y un teléfono de contacto.</p>
+											<p class="text-responsive margin-b-0 text-left visible-lg">Por último, déjanos un correo y un teléfono de contacto.</p>
 											<p class="margin-b-0 text-left text-responsive hidden-lg">Déjanos un correo y un teléfono de contacto.</p>
-											<p class="text-left visible-lg">Para contactarnos contigo necesitamos  tu nombre, tu teléfono y tu correo electrónico.</p>
-											<p class="text-left visible-md visible-lg text-xs">El teléfono es opcional, pero nos ayudará a comunicarnos contigo con mayor rapidez.
+											<p class="margin-b-0 text-left visible-lg text-responsive">Para contactarnos contigo necesitamos  tu nombre, tu teléfono y tu correo electrónico.</p>
+											<p class="text-left visible-md visible-lg text-xs text-responsive">El teléfono es opcional, pero nos ayudará a comunicarnos contigo con mayor rapidez.
 												Nunca publicaremos tus datos ni los compartiremos con terceros.
 											</p>
 											<p class="text-left text-xs-footer hidden-xs hidden-sm">
@@ -304,6 +304,10 @@
     </script>
     
     <script>
+    function is_mobile() {
+	      return navigator.userAgent.match(/(iPhone|iPod|iPad|Android|BlackBerry|BB10|Windows Phone|Tizen|Bada)/);
+	  }
+	    
 		$(function() {
 			//Expresión para validar un correo electrónico
         	var expr = /^[a-zA-Z0-9_\.\-]+@[a-zA-Z0-9\-]+\.[a-zA-Z0-9\-\.]+$/;
@@ -389,6 +393,87 @@
 				    	$('#uncheck').fadeIn('slow');
 				    }
 				});
+				
+					if (is_mobile()) {
+						$('#checkbox').click(function() {
+        			$('#checkbox').attr('checked');
+        		})
+        		
+			    	$('#subscribe').click(function() {
+			    	var name = $('#name').val().trim();
+        			var email = $('#email').val().trim();
+        			var phone = $('#phone').val().trim();
+        			var expName = $('#expName').val().trim();
+        			var expDesc = $('#expDesc').val().trim();
+        			var expMotive = $('#expMotive').val().trim();
+
+				    if (name == '') {
+				        $("#emptyName").fadeIn('slow');
+				    } else {
+				        $("#emptyName").fadeOut();
+				    }
+
+				    if (expName == '') {
+				        $("#emptyExpName").fadeIn('slow');
+				    } else {
+				        $("#emptyExpName").fadeOut();
+				    }
+
+				    if (expDesc == '') {
+				        $("#emptyExpDesc").fadeIn('slow');
+				    } else {
+				        $("#emptyExpDesc").fadeOut();
+				    }
+
+				    if (expMotive == '') {
+				        $("#emptyExpMotive").fadeIn('slow');
+				    } else {
+				        $("#emptyExpMotive").fadeOut();
+				    }
+
+				    if (!letter.test(name) && name != '') {
+				        $("#validateName").fadeIn('slow');
+				    } else {
+				        $("#validateName").fadeOut();
+				    }
+
+				    if (email == '') {
+				    	$("#emptyEmail").fadeIn('slow');
+				    } else {
+				        $("#emptyEmail").fadeOut();
+				    }
+
+				    if (!expr.test(email) && email != '') {
+				    	$('#validateEmail').fadeIn('slow');
+				    } else {
+				    	$('#validateEmail').fadeOut();
+				    }
+
+				    if (phone == '') {
+				    	$("#emptyPhone").fadeIn('slow');
+				    } else {
+				        $("#emptyPhone").fadeOut();
+				    }
+
+				    if (phone.length < 7 && phone != '') {
+				    	$("#errorPhone").fadeIn('slow');
+				    } else {
+				        $("#errorPhone").fadeOut();
+				    }
+
+				    if (!number.test(phone) && phone != '') {
+				    	$('#validatePhone').fadeIn('slow');
+				    } else {
+				    	$('#validatePhone').fadeOut();
+				    }
+
+			        if($("#checkbox").is(':checked')) {  
+			        	$('#uncheck').fadeOut();
+				    } else {
+				    	$('#uncheck').fadeIn('slow');
+				    }
+				});
+					}
 			});
 		});
 	</script>
@@ -429,17 +514,17 @@
 
 		<script>
 		function is_mobile() {
-	        return navigator.userAgent.match(/(iPhone|iPod|iPad|Android|BlackBerry|BB10|Windows Phone|Tizen|Bada)/);
-	    }
+      return navigator.userAgent.match(/(iPhone|iPod|iPad|Android|BlackBerry|BB10|Windows Phone|Tizen|Bada)/);
+    }
 		(function($) {
 			$(document).ready(function() {
-			    if ($(window).width() > 992 && !is_mobile()) {
+			    if ($(window).width() > 992) {
 				    $(document).alton({
 				        fullSlideContainer: 'pane-container',
 				        singleSlideClass: 'pane',
 				        useSlideNumbers: true,
 				        slideNumbersBorderColor: 'rgba(0, 0, 0, 0.1)',
-				        slideNumbersColor: '#ff5628',
+				        slideNumbersColor: '#66d1bc',
 				        bodyContainer: 'pageWrapper',
 				    });
 		    	} else {
@@ -465,7 +550,7 @@
 				        fullSlideContainer: 'pane-container',
 				        singleSlideClass: 'pane',
 				        slideNumbersBorderColor: 'rgba(0, 0, 0, 0.1)',
-				        slideNumbersColor: '#ff5628',
+				        slideNumbersColor: '#66d1bc',
 				        bodyContainer: 'pageWrapper',
 				    });
 		    	} else {
