@@ -402,11 +402,6 @@
             }
           }
 
-          $('.btn-default:not(.btn-default--subscribe)').click(function() {
-            slideIndex(previous, true);
-            slideIndex(current, false);
-          });
-
           // Update top variable
           top = false;
           $(document).scrollTo(current); // Scroll to selected element
