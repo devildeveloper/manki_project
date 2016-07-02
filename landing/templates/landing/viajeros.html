@@ -124,7 +124,7 @@
 									<div class="vertical-align">
 										<div class="col--full-text--width text-white">
 											<h2 class="h1 main-title">Vive experiencias nuevas e increíbles</h2>
-											<p class="main-subtitle text-white">¿Qué tal vivir una nueva experiencia, una nueva aventura?, ¿Qué tal tener siempre una nueva historia que contar?. Manki se encarga de darte la experiencia, tú encárgate de vivirla.</p>
+											<p class="main-subtitle text-white">¿Qué tal vivir una nueva experiencia, una nueva aventura?, ¿Qué tal tener siempre una nueva historia que contar? Manki se encarga de darte la experiencia, tú encárgate de vivirla.</p>
 											<div class="btn--hover">
 												<a href="#ViveUnaExperiencia" class="btn-default btn-default--traveler--variant">
 													<span class="text-oswald-regular hidden-xs hidden-sm">Quiero vivir experiencias con manki</span>
@@ -173,7 +173,7 @@
 											<h2 class="h1 main-title--footer">¡Sé un viajero Manki! <a href="/"><img src="{% static 'landing/img/logo-de-manki-footer.svg' %}" alt="Sé un guia Manki" class="image--width hidden-xs logo-manki-footer"></a></h2>
 										</div>
 										<p class="text-subscribe hidden-xs">Nuestra comunidad está creciendo y desarrollándose, y muy pronto lanzaremos la plataforma. Si quieres ser uno de los primero en probarla, inscríbete aquí:</p>
-										<p class="text-subscribe width-lg visible-xs">Muy pronto lanzaremos la plataforma. Si quieres ser uno de los primero en probarla, inscríbete aquí:</p>
+										<p class="text-subscribe width-lg visible-xs">Muy pronto lanzaremos la plataforma. Si quieres ser uno de los primeros en probarla, inscríbete aquí:</p>
 										<form class="formanki traveler" action="/landing/subscribe/" method="POST">
 											{% csrf_token%}
 											<div class="row">
@@ -249,6 +249,15 @@
         }
       });
     });
+    </script>
+    
+    <script>
+    	$(function() {
+    		$('.btn-default:not(.btn-default--subscribe)').click(function() {
+		      	$('.paginate:not(last-child)').css('background-color', 'rgba(0, 0, 0, 0.1)');
+		      	$('.paginate:last-child').css('background-color', '#ff5628');
+	      	});
+    	});
     </script>
     
 		<script>

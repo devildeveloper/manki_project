@@ -304,6 +304,15 @@
     </script>
     
     <script>
+    	$(function() {
+    		$('.btn-default:not(.btn-default--subscribe)').click(function() {
+		      	$('.paginate:not(last-child)').css('background-color', 'rgba(0, 0, 0, 0.1)');
+		      	$('.paginate:last-child').css('background-color', '#66d1bc');
+	      	});
+    	});
+    </script>
+    
+    <script>
     function is_mobile() {
 	      return navigator.userAgent.match(/(iPhone|iPod|iPad|Android|BlackBerry|BB10|Windows Phone|Tizen|Bada)/);
 	  }
