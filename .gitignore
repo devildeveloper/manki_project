@@ -1,3 +1,4 @@
+
 *.pyc
 .Python
 lib/
@@ -5,6 +6,4 @@ include/
 bin/
 *.sqlite3
 Procfile
-static/
-!*/static/
 */migrations/*
